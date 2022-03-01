@@ -10,4 +10,4 @@ Since we currently have no partners, You may be able to contact me through my di
 
 # Commands
 
-Since I havent found many bots with prune commands. We are working on adding that and Creating excellent commands use <a href="https://github.com/27saumya/dhravyapy">Dhravyapy</a>
+Since I havent found many bots with prune commands. We are working on adding that and Creating fun commands using : <a href="https://github.com/27saumya/dhravyapy">Dhravyapy</a>
