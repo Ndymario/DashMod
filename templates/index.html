@@ -17,99 +17,74 @@
 </head>
 <body class="bg-slate-100 text-slate-900">
 
-<div class="justify-evenly flex items-center">
-    <div class="logo -mr-10">
-        <img src="/static/mainlogo.png" class="w-24 h-24">
-    </div>
-    <div class="side-bar">
-        <a href="{{url_for('dashboard')}}">
-            <button>
-                Dashboard
-            </button>
-        </a>
-        <a href="{{url_for('servers')}}" class="ml-5 mr-5">
-            <button>
-                Servers
-            </button>
-        </a>
-        <a href="{{url_for('features')}}">
-            <button>
-                Features
-            </button>
-        </a>
-    </div>
-    <div>
-        <a href="https://github.com/Glowwonyt/DashMod">
-            <button class="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Github       
-            </button>
-        </a>
+<div id="wave">
+    <div class="justify-evenly flex items-center">
+        <div class="logo -mr-10">
+            <img src="/static/mainlogo.png" class="w-24 h-24">
+        </div>
+        <div class="side-bar">
+            <a href="{{url_for('login')}}">
+                <button>
+                    Dashboard
+                </button>
+            </a>
+            <a href="" class="ml-5 mr-5">
+                <button>
+                    Servers
+                </button>
+            </a>
+            <a href="">
+                <button>
+                    Features
+                </button>
+            </a>
+        </div>
+        <div class="flex">
+            <a href="https://github.com/Glowwonyt/DashMod" class="pr-5">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>      
+                </button>
+            </a>
+            <a href="" class="pr-5">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                      </svg>
+                </button>
+            </a>
+            <a href="{{url_for('login')}}">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                      </svg>
+                </button>
+            </a>
+        </div>
     </div>
 </div>
-<br>
-<div>
-    <div class="bg-purple-300 w-48 h-48 rounded-full ml-48 mix-blend-multiply blur-lg"></div>
-    <div class="bg-yellow-300 w-48 h-48 rounded-full -mt-48 ml-80 mix-blend-multiply blur-lg"></div>
-    <div class="bg-rose-300 w-48 h-48 rounded-full ml-48 -mt-24 mix-blend-multiply blur-lg"></div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="flex justify-center items-center flex-col -mt-64">
+<div class="flex justify-center items-center flex-col mt-48">
     <h1 class="font-extrabold text-6xl" align="center">Welcome to dashbot's Basement</h1>
-    <p class="text-gray-400 mt-10">A bot with a large amount of customization for servers <br>- made with one of the knowledgable devolopers!</p>
+    <p class="text-gray-400 mt-10">A bot with a large amount of customization for servers <br>- made by some of the knowledgable devolopers!</p>
 </div>
-<br>
-<br>
-<br>
-<br>
-<center>
+<center class="pt-40">
     <div class="flex justify-center items-center -mt-10">
-        <button class="bg-white border-2 border-blue-500 h-12 w-48 rounded-full hover:bg-blue-500 transition mr-24 hover:shadow-xl">
-            <a href="https://discord.com/api/oauth2/authorize?client_id=822039023584673813&permissions=8&scope=bot%20applications.commands">
+        <a href="https://discord.com/api/oauth2/authorize?client_id=822039023584673813&permissions=8&scope=bot%20applications.commands">
+            <button class="bg-white border-2 border-blue-500 h-12 w-48 rounded-full hover:bg-blue-500 transition mr-24 hover:shadow-xl">
                 Add the bot
-            </a>
-        </button>
-        <button class="bg-white border-2 border-blue-500 h-12 w-48 rounded-full hover:bg-blue-500 transition hover:shadow-xl">
-            <a href="{{url_for('dashboard')}}">
-                Go to dashboard
-            </a>
-        </button>
+            </button>
+        </a>        
+        <a href="{{url_for('dashboard')}}">
+            <button class="bg-white border-2 border-blue-500 h-12 w-48 rounded-full hover:bg-blue-500 transition hover:shadow-xl">
+            Go to dashboard
+            </button>
+        </a>
     </div>
 </center>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1 class="text-5xl pb-10" align="center">Reviews</h1>
+<h1 class="text-5xl pb-10 pt-[400px]" align="center">Reviews</h1>
 <hr>
 <div class="h-96 flex items-center justify-evenly">
     <div class="bg-white rounded-lg shadow-xl h-80 ml-5 w-96" align="center">
-        <p class="text-xl pt-2">Lexionas74#1535</p>
+        <p class="text-xl pt-2 pl-2 pr-2">Lexionas74#1535</p>
         <hr>
         <p class="pt-10">Bot good I was using it in my previous server and it had no errors and bugs. In my opinion its good, especially the background remover command. Its really great</p>
         <br>
@@ -122,7 +97,7 @@
     <div class="bg-white rounded-lg shadow-xl h-80 ml-5 w-96" align="center">
         <p class="pt-2">Hiphop602#3641</p>
         <hr>
-        <p class="pt-10">Vert helpful when I was afk and mischief makers ghost pinging me. Also the prune command was excellent I did'nt believe it.</p>
+        <p class="pt-10">Very helpful when I was afk and mischief makers ghost pinging me. Also the prune command was excellent I did'nt believe it.</p>
         <br>
         <br>
         <br>
