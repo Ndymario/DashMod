@@ -1,0 +1,16 @@
+
+.DS_Store
+
+client_id.txt
+
+client_secret.txt
+
+redirect_uri.txt
+
+secret_dash.txt
+
+secret.txt
+
+token.txt
+
+bot-env/

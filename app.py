@@ -4,17 +4,33 @@ from quart_discord import DiscordOAuth2Session, requires_authorization, Unauthor
 import asyncio
 import os
 import random
-from discord.ext import ipc
+from pycord.ext import ipc
+
+secret_file = open("secret_dash.txt", "r")
+secret = secret_file.read()
+secret_file.close()
+
+client_id_file = open("client_id.txt", "r")
+client_id = client_id_file.read()
+client_id_file.close()
+
+client_secret_file = open("client_secret.txt", "r")
+client_secret = client_secret_file.read()
+client_secret_file.close()
+
+redirect_uri_file = open("redirect_uri.txt", "r")
+redirect_uri = redirect_uri_file.read()
+redirect_uri_file.close()
 
 app = Quart(__name__)
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "true"
 
 app.secret_key = b"shhh"
-app.config['DISCORD_CLIENT_ID'] = 822039023584673813
-app.config['DISCORD_CLIENT_SECRET'] = 'Add ur secret key'
-app.config['DISCORD_REDIRECT_URI'] = "http://127.0.0.1:5000/callback"
-app.config['DISCORD_BOT_TOKEN'] = 'Put ur token here'
+app.config["SECRET_KEY"] = secret
+app.config["DISCORD_CLIENT_ID"] = client_id
+app.config["DISCORD_CLIENT_SECRET"] = client_secret
+app.config["DISCORD_REDIRECT_URI"] = redirect_uri 
 
 discord = DiscordOAuth2Session(app)
 myipc = ipc.Client(secret_key="dashmod")
