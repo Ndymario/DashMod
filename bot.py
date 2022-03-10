@@ -1,9 +1,8 @@
-
 import discord
 from discord.ext import commands
 from discord.ext import ipc
 import json
-
+import os
 
 class ClientBot(commands.Bot):
     def __init__(self, *args , **kwargs):
@@ -33,8 +32,9 @@ async def to_check_whether_im_in_it(data):
 
     return False
 
-
+for filename in os.listdir():
+    pass
     
 
 client.ipc.start()
-client.run("SECRETS OF UR MOM")
+client.run("BRO IM STOKED FOR TOMMOROW")
