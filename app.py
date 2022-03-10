@@ -4,17 +4,15 @@ from quart_discord import DiscordOAuth2Session, requires_authorization, Unauthor
 import asyncio
 import os
 import random
-from discord.ext import ipc
+from discord.ext import ipc , commands
 
 app = Quart(__name__)
 
-os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "true"
-
 app.secret_key = b"shhh"
-app.config['DISCORD_CLIENT_ID'] = 822039023584673813
-app.config['DISCORD_CLIENT_SECRET'] = 'Add ur secret key'
+app.config['DISCORD_CLIENT_ID'] = id
+app.config['DISCORD_CLIENT_SECRET'] = 'shhh'
 app.config['DISCORD_REDIRECT_URI'] = "http://127.0.0.1:5000/callback"
-app.config['DISCORD_BOT_TOKEN'] = 'Put ur token here'
+app.config['DISCORD_BOT_TOKEN'] = 'Dont come here to see that....'
 
 discord = DiscordOAuth2Session(app)
 myipc = ipc.Client(secret_key="dashmod")
@@ -33,15 +31,17 @@ async def dashboard():
     try:
         guilds = await discord.fetch_guilds()
     except:
-        return await redirect(url_for("login"))
+        return redirect(url_for("login"))
 
-    clientguilds = await myipc.request('get_count')
-    print(clientguilds)
     userguilds = []
-
     for guild in guilds:
-        if guild in clientguilds:
-            userguilds.append(guild)
+        idbruh = guild.id
+        if guild.permissions.manage_guild:
+            req_thingy = await myipc.request("to_check_whether_im_in_it",idbruh=idbruh)
+            if req_thingy == True:
+                userguilds.append(guild)
+            else:
+                continue
 
 
     return await render_template("dashboard.html",user=user , choice=choice , guilds = userguilds)
