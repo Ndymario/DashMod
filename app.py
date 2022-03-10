@@ -4,7 +4,7 @@ from quart_discord import DiscordOAuth2Session, requires_authorization, Unauthor
 import asyncio
 import os
 import random
-from pycord.ext import ipc
+from discord.ext import ipc , commands
 
 secret_file = open("secret_dash.txt", "r")
 secret = secret_file.read()
@@ -23,8 +23,6 @@ redirect_uri = redirect_uri_file.read()
 redirect_uri_file.close()
 
 app = Quart(__name__)
-
-os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "true"
 
 app.secret_key = b"shhh"
 app.config["SECRET_KEY"] = secret
@@ -49,15 +47,17 @@ async def dashboard():
     try:
         guilds = await discord.fetch_guilds()
     except:
-        return await redirect(url_for("login"))
+        return redirect(url_for("login"))
 
-    clientguilds = await myipc.request('get_count')
-    print(clientguilds)
     userguilds = []
-
     for guild in guilds:
-        if guild in clientguilds:
-            userguilds.append(guild)
+        idbruh = guild.id
+        if guild.permissions.manage_guild:
+            req_thingy = await myipc.request("to_check_whether_im_in_it",idbruh=idbruh)
+            if req_thingy == True:
+                userguilds.append(guild)
+            else:
+                continue
 
 
     return await render_template("dashboard.html",user=user , choice=choice , guilds = userguilds)
