@@ -18,8 +18,17 @@
 <body>
 <h1 align="center" class="text-4xl mt-20">Welcome {{user.name}}, {{choice}}</h1>
 <h2 align="center" class="text-2xl mt-5 text-gray-400">Select the server you want to moderate {{user.name}}.</h2>
-<div class="w-[1600px] flex ml-40 mt-20 justify-evenly shadow-xl rounded-xl pl-2 pt-2 bg-slate-300">
-    BUSSY SAKA
+<div class="flex justify-center items-center">
+    <div class="w-[1600px] flex ml-40 mt-20 justify-around items-center h-96 shadow-xl rounded-xl pl-2 pt-2 bg-slate-300">
+                {% for guild in guilds %}
+                <a href="nothing for now">
+                    <div class="transition hover:-translate-y-1 hover:scale-110">
+                        <img src="{{guild.icon_url}}" alt="{{guild.name}}" class="rounded-full w-48 h-48 border-4 border-black">
+                        <p align="center">{{guild.name}}</p>
+                    </div>
+                </a>
+                {% endfor %}
+    </div>
 </div>
 </body>
 </html>
