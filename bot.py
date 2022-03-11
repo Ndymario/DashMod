@@ -37,4 +37,9 @@ for filename in os.listdir():
     
 
 client.ipc.start()
-client.run("BRO IM STOKED FOR TOMMOROW")
+
+token_file = open("token.txt", "r")
+token = token_file.read()
+token_file.close()
+
+client.run(token)
